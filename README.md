@@ -1,3 +1,5 @@
+Ben
+
 ### Workshop Guide:
 
 GitHub Actions is an advanced feature of GitHub that enables automation and CI/CD natively. This workshop aims to educate you on how to implement these use cases across your repositories on GitHub. We encourage you to complete `Phase 2` in its entirety. Understanding actions concepts is one of the most important goals of this workshop and will enable you to implement actions that conform to modern best practices. Your moderator will likely be vastly out numbered during your workshop - therefore please rely heavily on the documentation provided and available on [help.github.com](https://help.github.com/en). The `final state` of this workshop is available [here](https://github.com/WRK2009-Workflow/master-camel-connect) for your convenience and reference. When you are complete, feel free to ask for feedback from your moderator and remember the best way to learn is to teach!
@@ -14,7 +16,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   1. Understand [GitHub flow](https://guides.github.com/introduction/flow/). This is how you will make contributions in practice.
   1. Checkout to a new feature branch. `$: git checkout -b your-name-actions;`
   1. Add your name and the date to the top of your README above the workshop directions.
-  1. Use the following git commands: 
+  1. Use the following git commands:
   ```  
     $: git add .;  
     $: git commit -m'initial repo push;  
@@ -47,7 +49,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   1. Ensure your application runs locally when you run `npm test` in the root of your repository. Validate tests pass locally.
   2. Review your `workflow.yml` file named `unit-test-ci.yml` in `.github/workflows`.
   3. Set the workflow to run on:
-  
+
 ```
   yaml
     on:
@@ -58,7 +60,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
       branches:
         - <your-name-actions> (this is the branch you created)
   ```
-    
+
   4. In your workflow file `./.github/workflows/unit-test-ci.yml` , ensure that the action runs on ` - run: npm test`.
   ![Workflow Definition](/images/workflow.png)
   5. Uncomment the workflow file. Follow GitHub Flow to push your uncommented workflow file to your remote repo.
@@ -78,13 +80,13 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   4. Review the `action.yml` file in directory: `.github/actions/updates-issues-action`. This is a meta file that describes the update-issues-action.
   5. In `action.yml`, uncomment your action metadata. [Helpful documentation here](https://help.github.com/en/github/automating-your-workflow-with-github-actions/metadata-syntax-for-github-actions).
   6. Understand the `runs` meta tag operates like:
-  
+
   ```yaml
     runs:
       using: 'node12'
       main: './main/automation/update-issues.js'
   ```    
-    
+
 > `main:` should point to where you are building your actual automation logic from the update-issues-action directory. This will behave like a lambda or azure function.
 
   7. In your text editor, uncomment the automation logic found in `update-issues-action/main/automation/update-issues.js` for creating an issue using the GitHub Issue APIs. (sorry you will need to do this line by line to keep comments intact!)
